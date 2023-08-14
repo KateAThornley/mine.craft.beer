@@ -1,6 +1,9 @@
 package net.kat.tutorialmod;
 
 import com.mojang.logging.LogUtils;
+
+import net.kat.tutorialmod.items.ModCreativeModTabs;
+import net.kat.tutorialmod.items.ModItems;
 import net.minecraft.client.Minecraft;
 import net.minecraft.core.registries.Registries;
 import net.minecraft.world.food.FoodProperties;
@@ -40,7 +43,10 @@ public class TutorialMod {
     public TutorialMod() {
         IEventBus modEventBus = FMLJavaModLoadingContext.get().getModEventBus();
 
-        // Register the commonSetup method for modloading
+        ModCreativeModTabs.register(modEventBus);
+
+        ModItems.register(modEventBus); // adds items to the game
+
         modEventBus.addListener(this::commonSetup);
 
         // Register ourselves for server and other game events we are interested in
@@ -52,6 +58,7 @@ public class TutorialMod {
         // Register our mod's ForgeConfigSpec so that Forge can create and load the
         // config file for us
         ModLoadingContext.get().registerConfig(ModConfig.Type.COMMON, Config.SPEC);
+
     }
 
     private void commonSetup(final FMLCommonSetupEvent event) {
@@ -59,6 +66,11 @@ public class TutorialMod {
 
     // Add the example block item to the building blocks tab
     private void addCreative(BuildCreativeModeTabContentsEvent event) {
+        if (event.getTabKey() == CreativeModeTabs.INGREDIENTS) {
+            event.accept(ModItems.STAR); // star is added to ingredients tab
+            event.accept(ModItems.LABATT); // labatt is added to ingredients tab
+        }
+
     }
 
     // You can use SubscribeEvent and let the Event Bus discover methods to call
