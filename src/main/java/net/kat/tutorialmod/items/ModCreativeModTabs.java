@@ -1,6 +1,7 @@
 package net.kat.tutorialmod.items;
 
 import net.kat.tutorialmod.TutorialMod;
+import net.kat.tutorialmod.blocks.ModBlocks;
 import net.minecraft.core.registries.Registries;
 import net.minecraft.network.chat.Component;
 import net.minecraft.world.item.CreativeModeTab;
@@ -22,6 +23,9 @@ public class ModCreativeModTabs {
                     .title(Component.translatable("creativetab.beer_tab"))
                     .displayItems((pParameters, pOutput) -> {
                         pOutput.accept(ModItems.LABATT.get());
+                        pOutput.accept(ModBlocks.LABATT_BLOCK.get());
+                        pOutput.accept(ModItems.EMPTY_LABATT.get());
+                        pOutput.accept(ModBlocks.EMPTY_LABATT_BLOCK.get());
                     })
                     .build());
 

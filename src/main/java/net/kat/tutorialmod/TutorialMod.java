@@ -2,6 +2,7 @@ package net.kat.tutorialmod;
 
 import com.mojang.logging.LogUtils;
 
+import net.kat.tutorialmod.blocks.ModBlocks;
 import net.kat.tutorialmod.items.ModCreativeModTabs;
 import net.kat.tutorialmod.items.ModItems;
 import net.minecraft.client.Minecraft;
@@ -46,7 +47,7 @@ public class TutorialMod {
         ModCreativeModTabs.register(modEventBus);
 
         ModItems.register(modEventBus); // adds items to the game
-
+        ModBlocks.register(modEventBus);
         modEventBus.addListener(this::commonSetup);
 
         // Register ourselves for server and other game events we are interested in
@@ -67,7 +68,7 @@ public class TutorialMod {
     // Add the example block item to the building blocks tab
     private void addCreative(BuildCreativeModeTabContentsEvent event) {
         if (event.getTabKey() == CreativeModeTabs.INGREDIENTS) {
-            event.accept(ModItems.STAR); // star is added to ingredients tab
+            // event.accept(ModItems.STAR); // star is added to ingredients tab
             event.accept(ModItems.LABATT); // labatt is added to ingredients tab
         }
 

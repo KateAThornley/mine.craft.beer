@@ -1,5 +1,8 @@
 {
     "item.tutorialmod.star": "Star",
     "item.tutorialmod.labatt": "Labatt 50",
-    "creativetab.beer_tab": "Beers!"
+    "creativetab.beer_tab": "Beers!",
+    "block.tutorialmod.labatt_block": "Case of 50s",
+    "item.tutorialmod.empty_labatt": "Empty Labatt",
+    "block.tutorialmod.empty_labatt_block": "Empty Case of 50s"
 }
