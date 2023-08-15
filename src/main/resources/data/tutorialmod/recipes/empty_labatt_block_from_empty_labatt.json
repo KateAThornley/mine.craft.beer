@@ -1,0 +1,17 @@
+{
+    "type": "minecraft:crafting_shaped",
+    "category": "misc",
+    "pattern": [
+        "###",
+        "###",
+        "###"
+    ],
+    "key": {
+        "#": {
+            "item": "tutorialmod:empty_labatt"
+        }
+    },
+    "result": {
+        "item": "tutorialmod:empty_labatt_block"
+    }
+}

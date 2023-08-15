@@ -1,0 +1,13 @@
+{
+    "type": "minecraft:crafting_shapeless",
+    "category": "misc",
+    "ingredients": [
+        {
+            "item": "tutorialmod:empty_labatt_block"
+        }
+    ],
+    "result": {
+        "item": "tutorialmod:empty_labatt",
+        "count": 9
+    }
+}
